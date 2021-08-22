@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+<title>WACKGOOD</title>
+</head>
+	<div class="box" style="border:1px solid; padding:10px; margin: auto;background-color: lightgray;">
+	페이지 수 : <input type='number' id="pageNum" value="2"/>
+	<br/>
+	글       수 : <input type='text' id="textNum"  value="15,7"/>
+	<br/>
+	<input type='submit' id="btn1" onclick="btn1_click();"/>
+	<script>
+	function btn1_click(){
+		const pageNum = document.getElementById('pageNum').value;
+		const textNum= document.getElementById('textNum').value;
+		const myArr = textNum.split(",");
+		const randPageNum = Math.floor(Math.random()*pageNum+1)
+		var randNum = [];
+		for (let i=0;i<pageNum;i++){
+			tempValue = Math.floor(Math.random()*myArr[i]+1);
+			randNum.push(tempValue)
+			
+		}
+		
+		alert("페이지 : "+randPageNum +"\n 글 : "+randNum[randPageNum-1]);
+	}
+	</script>
+	</div>
+</html>
